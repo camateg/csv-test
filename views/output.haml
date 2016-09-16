@@ -1,0 +1,18 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+.container
+  .table-responsive
+    %table{:class=>'table table-striped table-bordered'}
+      %thead{:class=>'danger'}
+        %tr
+          -rows[0].each do |item|
+            %td{:class=>'danger'}
+              %b
+                =item
+      %tbody
+      -rows[1..rows.length-1].each do |row|
+        %tr
+          -row.each do |item|
+            %td
+              =item
